@@ -1,0 +1,39 @@
+{
+  "name": "devetiv.com",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-spring/web": "^9.7.4",
+    "@tryghost/content-api": "^1.11.21",
+    "animejs": "^3.2.2",
+    "aos": "^2.3.4",
+    "date-fns": "^3.6.0",
+    "framer-motion": "^11.3.24",
+    "html-react-parser": "^5.1.12",
+    "next": "14.2.5",
+    "nodemailer": "^6.9.14",
+    "nprogress": "^0.2.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.2.1",
+    "react-infinite-logo-slider": "^1.0.13",
+    "react-scroll": "^1.9.0",
+    "react-slick": "^0.30.2",
+    "react-type-animation": "^3.2.0",
+    "react-typed": "^2.0.12",
+    "sharp": "^0.33.4",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
