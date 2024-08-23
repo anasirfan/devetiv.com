@@ -160,7 +160,7 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             <svg
-              className={`w-9 h-9 ${isMenuOpen ? "text-black" : urlColors}`}
+              className={`w-9 h-9 ${ isSticky ? 'text-[#CDAC00]' : urlColors}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

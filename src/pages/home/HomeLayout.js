@@ -69,7 +69,7 @@ const HomeLayout = () => {
           objectFit="cover" // Ensure the image covers the div without stretching
           className="z-0"
         />
-        <div className="relative z-20">
+        <div className="mt-[90px] relative z-20">
           <Navbar bgColor={"none"} urlColors={"text-white"} />
           <HeadSection heading={heading} description={description} />
         </div>
