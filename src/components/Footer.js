@@ -87,7 +87,7 @@ const Footer = ({ textColor, gradient }) => {
           <div className="grid grid-cols-4 sm:grid-cols-2 custom-md:grid-cols-2 lg:grid-cols-4 gap-8">
             {FooterLinks.map((section, index) => (
               <div key={index}>
-                <h4 className={`text-lg font-semibold mb-4 ${textColor} `}>{section.heading}</h4>
+                <p className={`text-lg font-semibold mb-4 ${textColor} `}>{section.heading}</p>
                 <ul>
                   {section.subcategory.map((link, idx) => (
                     <li key={idx}>

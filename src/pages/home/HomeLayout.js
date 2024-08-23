@@ -111,11 +111,10 @@ const HomeLayout = () => {
                 stroke="#1A83AC"
                 strokeWidth="5"
                 filter="url(#glow)"
-                stroke-dasharray="3500"
-                stroke-dashoffset="3500"
+                strokeDashoffset="3500"
               >
                 <animate
-                  attributeName="stroke-dashoffset"
+                  attributeName="strokeDashoffset"
                   from="1000"
                   to="0"
                   dur="12s"
@@ -165,11 +164,11 @@ const HomeLayout = () => {
       
               strokeWidth="5"
               filter="url(#glow)"
-              stroke-dasharray="0"
-              stroke-dashoffset="0"
+              strokeDasharray="0"
+              strokeDashoffset="0"
             />
             <animate
-              attributeName="stroke-dashoffset"
+              attributeName="strokeDashoffset"
               from="1000"
               to="0"
               dur="12s"

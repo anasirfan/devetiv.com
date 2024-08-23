@@ -27,6 +27,7 @@ const  Services = () => {
       icon: worldIcon,
       img: softdevImage,
       href: '/software-development',
+      linkDesc: "Learn more about our custom software development services",
       className: "bg-[#04445F] col-span-4 sm:col-span-1 ",
     },
     {
@@ -36,6 +37,8 @@ const  Services = () => {
       icon: appIcon,
       img: appDevImage,
       href: '/app-development',
+      linkDesc: "Learn more about our app development solutions",
+
       className: "basis-1/3 shadow-sm shadow-[#04445F] col-span-3 sm:col-span-1 sm:bg-[#04445F]",
     },
     {
@@ -45,6 +48,8 @@ const  Services = () => {
       icon: BiIcon,
       img: BiImage,
       href: '/contact-us',
+      linkDesc: "Learn more about how to websites,bi and more",
+
       className: "basis-4/7 shadow-sm shadow-[#04445F]  col-span-3 sm:col-span-1 sm:bg-[#04445F] ",
     },
     {
@@ -54,6 +59,9 @@ const  Services = () => {
       icon: IndustriesIcon,
       img: IndustriesImage,
       href: '/target-industries',
+      linkDesc: "Learn more about the industries we serve",
+
+      
       className: "bg-[#04445F]  basis-2/3 col-span-4 sm:col-span-1",
     },
   ];
@@ -107,7 +115,7 @@ const  Services = () => {
                 <p data-aos="zoom-in-up" className="text-white xl:mb-4 xl:text-[14px] 2xl:mb-4 2xl:text-[14px] lg:text-[12px] lg:w-[90%] custom-md:w-[90%] custom-md:text-[12px] custom-sm:w-[95%] custom-sm:text-[11px]">
                   {service.desc}
                 </p>
-                <Link data-aos="zoom-out" href={service.href}>
+                <Link data-aos="zoom-out" href={service.href} title={service.linkDesc}>
                   <div className="flex flex-row hover:text-[#CDAC00]">
                     <p className="underline">Learn More </p>
                     <span>
