@@ -35,7 +35,7 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
       links: [
         { href: "/app-development/web", label: "Web" },
         { href: "/app-development/mobile-app", label: "Mobile" },
-        { href: "/app-development/cloud", label: "Cloud" },
+        { href: "/app-development/cloud-app-development", label: "Cloud" },
         // { href: "#", label: "e-Commerce" },
         // { href: "#", label: "App Management" },
       ],
@@ -160,7 +160,7 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             <svg
-              className={`w-9 h-9 ${isMenuOpen ? "text-black" : "text-white"}`}
+              className={`w-9 h-9 ${isMenuOpen ? "text-black" : urlColors}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

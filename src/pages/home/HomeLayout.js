@@ -89,7 +89,7 @@ const HomeLayout = () => {
           <AboutUs revealButtonRef={revealButtonRef} />
           <div className="relative py-12 md:py-0 sm:py-0 ">
             <svg
-              className="sm:hidden absolute animate-pulse"
+              className="sm:hidden absolute animate-pulse -z-10"
               viewBox="-50 0 1387 735"
               width="100%"
               fill="none"

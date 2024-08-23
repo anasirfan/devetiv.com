@@ -28,21 +28,22 @@ const AboutUs = ({ revealButtonRef }) => {
         className="flex svgReveal md:items-start lg:items-start large-device-reveal sm:justify-center"
         ref={revealButtonRef}
       >
-        <motion.div
-          whileHover={{ scale: [null, 1, 1.1] }}
-          transition={{ duration: 0.3 }}
-        >
-          <Link href={"/about"}>
+
+        <Link href={"/about"}>
+          <motion.div
+            whileHover={{ scale: [null, 1, 1.1] }}
+            transition={{ duration: 0.3 }}
+          >
             <button
               data-aos="zoom-out"
-              className="relative   mx-auto rounded-[40px] bg-[#CDAC00] hover:bg-[transparent] drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] hover:border-[#CDAC00] text-black border-[#CDAC00] border-[2px] hover:text-white flex flex-row h-14 justify-center text-center px-[4px] py-[14px] w-[220px]  focus:outline-none focus:shadow-outline"
+              className="relative z-50   mx-auto rounded-[40px] bg-[#CDAC00] hover:bg-[transparent] drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] hover:border-[#CDAC00] text-black border-[#CDAC00] border-[2px] hover:text-white flex flex-row justify-center text-center px-[4px] py-[14px] w-[220px]  focus:outline-none focus:shadow-outline"
             >
               Reveal more{" "}
               <BsArrowUpRightCircle className="ml-[8px] my-[2px] h-5 w-5" />
             </button>
-          </Link>
-        </motion.div>
-      </div>
+          </motion.div>
+        </Link>
+      </div>  
     </div>
   );
 };

@@ -2,14 +2,15 @@ import focus from "../../../public/assets/images/categories/software-development
 import unmatched from "../../../public/assets/images/categories/software-development/whychooseus/unmatched.png";
 import unflinching from "../../../public/assets/images/categories/software-development/whychooseus/unflinching.png";
 
-export const MainHeading = 'Bring Your Brand to Your Audience’s Fingertips with a Premium Mobile App';
-export const MainDesc = "Mobile apps cut all the middlemen out and enable your business to connect directly with your customers and target audiences. With just a click, a user can get a highly engaging experience with your brand and service. Or not, depending on how good that app is… Want an app built around your audience’s preferences? Get our help with mobile app development."
+// export const MainHeading = 'Bring Your Brand to Your Audience’s Fingertips with a Premium Mobile App';
+export const MainHeading = 'Mobile App';
+export const MainDesc = "Mobile apps cut all the middlemen out and enable your business to connect directly with your customers and target audiences. Get our help with mobile app development."
 
 export const heading = "The age of the mobile app";
 export const description =
   "As smartphones became a global phenomenon during the past couple of decades, mobile apps have emerged as one of the primary ways consumers interact with businesses.<br><br>At this point, the global mobile app market has crossed a $240 billion mark and is expected to grow to over $665 billion by 2032.<br><br>In other words, we are living in the age of the mobile app. If you are not using it to engage and retain customers, you are probably missing out.";
 
-
+ 
 export const webHeading = "How Web Apps Work";
 export const webDescription =
   "Getting professional support for complex software products is crucial because it ensures you have expert guidance to navigate intricate systems and resolve technical issues efficiently. ";
