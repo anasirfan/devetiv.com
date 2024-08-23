@@ -43,6 +43,8 @@ const HomeLayout = () => {
   useEffect(() => {
     updateSvgStyles();
   }, []);
+
+
   return (
     <div>
       <Head>
@@ -201,7 +203,7 @@ const HomeLayout = () => {
                   transformOrigin: "center center",
                 }}
               >
-                <Slider
+               <Slider
                   duration={40}
                   pauseOnHover={true}
                   blurBorders={false}
@@ -218,7 +220,7 @@ const HomeLayout = () => {
                     <Image
                       src={logo1}
                       alt="Logos"
-                      className="sm:h-6 w-full  md:h-10   2xl:h-16   mx-12 2xl:mx-20"
+                      className="sm:h-8 md:h-10   2xl:h-16   mx-12 2xl:mx-20"
                     />
                   </Slider.Slide>
                   <Slider.Slide
@@ -231,7 +233,7 @@ const HomeLayout = () => {
                     <Image
                       src={logo2}
                       alt="Logos"
-                      className="sm:h-6 w-full  md:h-10   2xl:mx-20 2xl:h-16   mx-7 "
+                      className="sm:h-8 md:h-10   2xl:mx-20 2xl:h-16   mx-7 "
                     />
                   </Slider.Slide>
                   <Slider.Slide
@@ -244,7 +246,7 @@ const HomeLayout = () => {
                     <Image
                       src={logo3}
                       alt="Logos"
-                      className="sm:h-6 w-full  md:h-10   2xl:mx-20 2xl:h-16   mx-7"
+                      className="sm:h-8 md:h-10   2xl:mx-20 2xl:h-16   mx-7"
                     />
                   </Slider.Slide>
                   <Slider.Slide
@@ -257,7 +259,7 @@ const HomeLayout = () => {
                     <Image
                       src={logo4}
                       alt="Logos"
-                      className="sm:h-6 w-full  md:h-10   2xl:mx-20 2xl:h-16   mx-7"
+                      className="sm:h-8 md:h-10   2xl:mx-20 2xl:h-16   mx-7"
                     />
                   </Slider.Slide>
                   <Slider.Slide
@@ -271,7 +273,7 @@ const HomeLayout = () => {
                     <Image
                       src={logo5}
                       alt="Logos"
-                      className="sm:h-6 w-full  md:h-10   2xl:mx-20 2xl:h-16   mx-7"
+                      className="sm:h-8 md:h-10   2xl:mx-20 2xl:h-16   mx-7"
                     />
                   </Slider.Slide>
                   <Slider.Slide
@@ -284,7 +286,7 @@ const HomeLayout = () => {
                     <Image
                       src={logo6}
                       alt="Logos"
-                      className="sm:h-6 w-full  md:h-10   2xl:mx-20 2xl:h-16   mx-7"
+                      className="sm:h-8 md:h-10   2xl:mx-20 2xl:h-16   mx-7"
                     />
                   </Slider.Slide>
                 </Slider>
