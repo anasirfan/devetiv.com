@@ -12,17 +12,26 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
   const menuItems = [
     {
       title: "Software Development",
+      href: "/software-development",
       links: [
         { href: "/software-development/crm", label: "CRM" },
         { href: "/software-development/erp", label: "ERP" },
         { href: "/software-development/custom-software", label: "Custom" },
         // { href: "#", label: "Project Rescue" },
-        { href: "/software-development/digital-transformation", label: "Digital Transformation" },
-        { href: "/software-development/support-and-management", label: "Support & Management" },
+        {
+          href: "/software-development/digital-transformation",
+          label: "Digital Transformation",
+        },
+        {
+          href: "/software-development/support-and-management",
+          label: "Support & Management",
+        },
       ],
     },
     {
       title: "App Development",
+      href: "/software-development",
+
       links: [
         { href: "/app-development/web", label: "Web" },
         { href: "/app-development/mobile-app", label: "Mobile" },
@@ -31,20 +40,24 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
         // { href: "#", label: "App Management" },
       ],
     },
-    {
-      title: "Website, BI, & more",
-      links: [
-        { href: "#", label: "Website" },
-        { href: "#", label: "Business Intelligence" },
-        { href: "#", label: "Data Analytics" },
-        { href: "#", label: "DevOps" },
-        { href: "#", label: "QA & Testing" },
-        { href: "#", label: "UI/UX Design" },
-        { href: "#", label: "Brand Design" },
-      ],
-    },
+    // {
+    //   title: "Website, BI, & more",
+    //   href: "/software-development",
+
+    //   links: [
+    //     { href: "#", label: "Website" },
+    //     { href: "#", label: "Business Intelligence" },
+    //     { href: "#", label: "Data Analytics" },
+    //     { href: "#", label: "DevOps" },
+    //     { href: "#", label: "QA & Testing" },
+    //     { href: "#", label: "UI/UX Design" },
+    //     { href: "#", label: "Brand Design" },
+    //   ],
+    // },
     {
       title: "Our Target Industries",
+      href: "/target-industries",
+
       links: [
         { href: "/target-industries/education", label: "Education" },
         { href: "/target-industries/fintech", label: "Fintech" },
@@ -57,6 +70,8 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
     },
     {
       title: "About the Company",
+      href: "/about",
+
       links: [
         { href: "/about", label: "About Us" },
         { href: "/contact-us", label: "Contact Us" },
@@ -77,7 +92,7 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 90) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -92,10 +107,9 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
 
   return (
     <nav
-      className={`text-white fixed h-[90px] top-0 w-[100%] z-50    py-4 px-6 ${isSticky
-        ? " bg-black"
-        : `${bgColor} `
-        }`}
+      className={`text-white fixed h-[90px] top-0 w-[100%] z-50    py-4 px-6 ${
+        isSticky ? " bg-black" : `${bgColor} `
+      }`}
     >
       <div className=" mx-auto flex items-center justify-around ">
         <motion.div
@@ -110,19 +124,23 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
         </motion.div>
 
         <div
-          className={`hidden px-8 md:flex  items-center lg:text-[14px] xl:text-[14px] lg:w-[60%] xl:w-[60%]  custom-md:text-[12px]   ${isSticky ? "text-white" : urlColors
-            }`}
+          className={`hidden px-8 md:flex  items-center lg:text-[14px] xl:text-[14px] lg:w-[60%] xl:w-[60%]  custom-md:text-[12px]   ${
+            isSticky ? "text-white" : urlColors
+          }`}
         >
           <ul className="flex space-x-6">
             {menuItems.map((item, index) => (
               <li key={index} className="relative group">
-                <button className="hover:text-gray-300">
-                  {item.title}
-                </button>
+                <Link href={item.href}>
+                  <button className="hover:text-gray-300">{item.title}</button>
+                </Link>
                 <div className="hidden group-hover:block absolute top-full left-0 w-48 bg-white bg-custom-gradient z-50 text-black shadow-lg rounded-xl py-4">
                   <ul>
                     {item.links.map((link, subIndex) => (
-                      <li key={subIndex} className="w-full px-4 py-2 hover:bg-[#04445F] link-underline group">
+                      <li
+                        key={subIndex}
+                        className="w-full px-4 py-2 hover:bg-[#04445F] link-underline group"
+                      >
                         <Link href={link.href} className=" ">
                           {link.label}
                         </Link>
@@ -136,7 +154,11 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
         </div>
 
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="focus:outline-none" aria-label={isMenuOpen ? "Close menu" : "Open menu"} >
+          <button
+            onClick={toggleMenu}
+            className="focus:outline-none"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
             <svg
               className={`w-9 h-9 ${isMenuOpen ? "text-black" : "text-white"}`}
               fill="none"
@@ -156,13 +178,15 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed  inset-0 w-full h-full bg-custom-gradient transition-transform duration-300 ease-in-out z-50 transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
-            }`}
+          className={`fixed  inset-0 w-full h-full bg-custom-gradient transition-transform duration-300 ease-in-out z-50 transform ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
         >
           <div className="relative">
             <button
               onClick={toggleMenu}
-              className="absolute top-4 right-4 focus:outline-none" aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              className="absolute top-4 right-4 focus:outline-none"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               <svg
                 className="w-8 h-8 text-black"
@@ -218,8 +242,9 @@ const Navbar = ({ bgColor, urlColors, getStartedClr }) => {
                   </button>
                   <hr className="border-[#C6C6C6] text-[2px] px-4 w-full" />
                   <div
-                    className={`${openDropdown === index ? "block" : "hidden"
-                      }  flex flex-col items-start bg-[#f6f6f6] text-gray-500 rounded-md shadow-lg text-sm z-50 w-[100%] py-4 mt-1`}
+                    className={`${
+                      openDropdown === index ? "block" : "hidden"
+                    }  flex flex-col items-start bg-[#f6f6f6] text-gray-500 rounded-md shadow-lg text-sm z-50 w-[100%] py-4 mt-1`}
                   >
                     <ul>
                       {item.links.map((link, idx) => (

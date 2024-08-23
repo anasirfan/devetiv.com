@@ -10,7 +10,19 @@ import React from "react";
 const SinglePosts = ({post}) => {
 
   if(!post) {
-    return;
+    return (
+      <>
+      <Navbar
+        bgColor={"none"}
+        urlColors={"text-black"}
+        getStartedClr={"text-[#CDAC00]"}
+      />
+      <h1>Coming Soon !</h1>
+      <ConnectUs />
+      <Footer textColor={"!text-black"} gradient={"text-[#353535]"} />
+      <ScrollToTop />
+      </>
+    );
   }
   return (
     <div>

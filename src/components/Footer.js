@@ -44,18 +44,18 @@ const Footer = ({ textColor, gradient }) => {
         { name: 'Brand Design', href: '#' },
       ],
     },
-    {
-      heading: 'Our Target Industries',
-      subcategory: [
-        { name: 'Education', href: '/target-industries/education' },
-        { name: 'Fintech', href: '/target-industries/fintech' },
-        { name: 'Healthcare', href: '/target-industries/healthcare' },
-        { name: 'Hospitality', href: '/target-industries/hospitality' },
-        { name: 'Manufacturing', href: '/target-industries/manufacturing' },
-        { name: 'Retail', href: '/target-industries/retail' },
-        { name: 'SaaS', href: '/target-industries/saas' },
-      ],
-    },
+    // {
+    //   heading: 'Our Target Industries',
+    //   subcategory: [
+    //     { name: 'Education', href: '/target-industries/education' },
+    //     { name: 'Fintech', href: '/target-industries/fintech' },
+    //     { name: 'Healthcare', href: '/target-industries/healthcare' },
+    //     { name: 'Hospitality', href: '/target-industries/hospitality' },
+    //     { name: 'Manufacturing', href: '/target-industries/manufacturing' },
+    //     { name: 'Retail', href: '/target-industries/retail' },
+    //     { name: 'SaaS', href: '/target-industries/saas' },
+    //   ],
+    // },
     {
       heading: 'About the Company',
       subcategory: [
@@ -84,7 +84,7 @@ const Footer = ({ textColor, gradient }) => {
           </p>
         </div>
         <div className="w-[95%] mx-auto px-4 sm:w-[100%] sm:px-1">
-          <div className="grid grid-cols-5 sm:grid-cols-2 custom-md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-4 sm:grid-cols-2 custom-md:grid-cols-2 lg:grid-cols-4 gap-8">
             {FooterLinks.map((section, index) => (
               <div key={index}>
                 <h4 className={`text-lg font-semibold mb-4 ${textColor} `}>{section.heading}</h4>

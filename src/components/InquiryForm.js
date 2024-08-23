@@ -3,44 +3,87 @@ import Image from "next/image";
 import contactImage from "../../public/assets/images/contact-form.jpg";
 import { motion } from "framer-motion";
 
-const InquiryForm = ({industry, parentCategory, childcategory , disableIndustry, disableCatgory}) => {
+const InquiryForm = ({
+  industry,
+  parentCategory,
+  childcategory,
+  disableIndustry,
+  disableCatgory,
+}) => {
   const [activeCategory, setActiveCategory] = useState(null);
 
   const categories = {
-    "App Development": ["Web App", "Mobile App", "Cloud App", "E-commerce App", "App Management"],
-    "Software Development": ["CRM", "ERP", "Project Rescue", "Digital Transformation", "Support & Management", "Custom"],
-    "Website, BI, and More": ["Website", "Business Intelligence", "Data Analytics", "DevOps", "Q/A & Testing", "UI/UX Design", "Brand Design"],
+    "App Development": [
+      "Web App",
+      "Mobile App",
+      "Cloud App",
+      "E-commerce App",
+      "App Management",
+    ],
+    "Software Development": [
+      "CRM",
+      "ERP",
+      "Project Rescue",
+      "Digital Transformation",
+      "Support & Management",
+      "Custom",
+    ],
+    "Website, BI, and More": [
+      "Website",
+      "Business Intelligence",
+      "Data Analytics",
+      "DevOps",
+      "Q/A & Testing",
+      "UI/UX Design",
+      "Brand Design",
+    ],
   };
-  const Industries = ["Education", "Fintech", "Healthcare", "Hospitality", "Manufacturing", "Retail", "SaaS", "Other"];
+  const Industries = [
+    "Education",
+    "Fintech",
+    "Healthcare",
+    "Hospitality",
+    "Manufacturing",
+    "Retail",
+    "SaaS",
+    "Other",
+  ];
 
   const [showOtherInput, setShowOtherInput] = useState(false);
-  const [otherIndustry, setOtherIndustry] = useState('');
+  const [otherIndustry, setOtherIndustry] = useState("");
 
   const handleIndustryChange = (e) => {
     const value = e.target.value;
-    if (value === 'Other') {
+    if (value === "Other") {
       setShowOtherInput(true);
-      setFormData(prev => ({ ...prev, Industry: value }));
+      setFormData((prev) => ({ ...prev, Industry: value }));
     } else {
       setShowOtherInput(false);
-      setFormData(prev => ({ ...prev, Industry: value }));
-      setOtherIndustry(''); 
+      setFormData((prev) => ({ ...prev, Industry: value }));
+      setOtherIndustry("");
     }
   };
 
   const handleOtherIndustryChange = (e) => {
     const value = e.target.value;
     setOtherIndustry(value);
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      Industry: value ? `Other:${value}` : 'Other:',
+      Industry: value ? `Other:${value}` : "Other:",
     }));
-  }; const [selectedCategory, setSelectedCategory] = useState(parentCategory || '');
+  };
+  const [selectedCategory, setSelectedCategory] = useState(
+    parentCategory || ""
+  );
 
   const handleCategoryChange = (e) => {
     const selectedCategory = e.target.value;
     setSelectedCategory(selectedCategory);
-    setFormData((prev) => ({ ...prev, projectType: selectedCategory, subCategory: '' }));
+    setFormData((prev) => ({
+      ...prev,
+      projectType: selectedCategory,
+      subCategory: "",
+    }));
     setActiveCategory(selectedCategory);
   };
 
@@ -54,7 +97,7 @@ const InquiryForm = ({industry, parentCategory, childcategory , disableIndustry,
     companyName: "",
     jobTitle: "",
     email: "",
-    Industry: industry || '',
+    Industry: industry || "",
     projectType: parentCategory || "",
     subCategory: childcategory || "",
     deadline: "",
@@ -63,36 +106,35 @@ const InquiryForm = ({industry, parentCategory, childcategory , disableIndustry,
   });
   const [status, setStatus] = useState("");
 
-  console.log(formData)
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/send-email', {
-      method: 'POST',
+    const response = await fetch("/api/send-email", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     });
     const result = await response.json();
     if (result.success) {
-      setStatus('Message sent successfully!');
+      setStatus("Message sent successfully!");
       setFormData({
-        firstName: '',
-        lastName: '',
-        companyName: '',
-        jobTitle: '',
-        email: '',
-        projectType: '',
-        deadline: '',
-        budget: '',
-        details: ''
+        firstName: "",
+        lastName: "",
+        companyName: "",
+        jobTitle: "",
+        email: "",
+        projectType: "",
+        deadline: "",
+        budget: "",
+        details: "",
       });
     } else {
-      setStatus('Failed to send message.');
+      setStatus("Failed to send message.");
     }
   };
 
@@ -252,7 +294,11 @@ const InquiryForm = ({industry, parentCategory, childcategory , disableIndustry,
             Industry
           </label>
         </div>
-        <div className={`grid ${selectedCategory ? 'grid-cols-2' : 'grid-cols-1'}  md:gap-6`}>
+        <div
+          className={`grid ${
+            selectedCategory ? "grid-cols-2" : "grid-cols-1"
+          }  md:gap-6`}
+        >
           <div className="relative z-0 w-full mb-5 group">
             <select
               name="projectType"
@@ -264,7 +310,7 @@ const InquiryForm = ({industry, parentCategory, childcategory , disableIndustry,
               disabled={disableCatgory}
               required
             >
-              <option value="" disabled defaultValue={''}>
+              <option value="" disabled defaultValue={""}>
                 Select Project Type
               </option>
               {Object.keys(categories).map((mainCategory) => (
@@ -291,7 +337,7 @@ const InquiryForm = ({industry, parentCategory, childcategory , disableIndustry,
                 disabled={disableCatgory}
                 required
               >
-                <option value="" disabled defaultValue={''}>
+                <option value="" disabled defaultValue={""}>
                   Select Subcategory
                 </option>
                 {categories[selectedCategory].map((subCategory) => (
@@ -303,7 +349,6 @@ const InquiryForm = ({industry, parentCategory, childcategory , disableIndustry,
             </div>
           )}
         </div>
-
 
         <div className="relative z-0 w-full mb-5 group">
           <input
@@ -364,7 +409,14 @@ const InquiryForm = ({industry, parentCategory, childcategory , disableIndustry,
         >
           Submit
         </button>
-        {status && <p className="text-center mt-4">{status}</p>}
+        {status && (
+          <div
+            className="my-4 p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+            role="alert"
+          >
+            <span class="font-medium">Your Email Has Been Sent Successfully!</span> Thank you for reaching out. We will get back to you shortly with a response.
+          </div>
+        )}
       </form>
     </div>
   );

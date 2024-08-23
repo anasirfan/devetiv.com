@@ -6,9 +6,32 @@ import blogBanner from "../../../public/assets/images/blog-banner.png";
 import LatestBlogs from "@/components/Blogs/LatestBlogs";
 import ConnectUs from "@/components/About/ConnectUs";
 import { getPosts } from "@/services/Blogs";
+import Link from "next/link";
 
 const blog = ({posts}) => {
+  if(!posts) {
+    return (
+      <>
+      <Navbar
+        bgColor={"bg-black"}
+        urlColors={"text-white"}
+        getStartedClr={"text-[#CDAC00]"}
+      />
+      <div className="h-screen items-center flex justify-center bg-custom-gradient  flex-col space-y-10">
 
+
+      <h1 className=" text-black">Coming Soon !</h1>
+      <Link href={'/blogs/blog1'}>
+      
+      <button className="py-6 px-4 rounded-full text-white bg-[#CDAC00] hover:text-[#CDAC00] hover:bg-white border hover:border-[#CDAC00]">Learn more about SaaS ... </button>
+      </Link>
+      </div>
+      <ConnectUs />
+      <Footer textColor={"!text-black"} gradient={"text-[#353535]"} />
+      <ScrollToTop />
+      </>
+    );
+  }
   return (
     <>
       <div data-aos="fade-down" className="bg-cover bg-center bg-customWhite h-[670px] rounded-b-3xl">
@@ -41,19 +64,19 @@ const blog = ({posts}) => {
   );
 };
 
-export async function getServerSideProps(context) {
-    const posts = await getPosts();
+// export async function getServerSideProps(context) {
+//     const posts = await getPosts();
 
-    if (!posts) {
-        return {
-          notFound: true,
-        }
-      }
+//     if (!posts) {
+//         return {
+//           notFound: true,
+//         }
+//       }
     
-      return {
-        props: { posts }
-      }
+//       return {
+//         props: { posts }
+//       }
     
-}
+// }
 
 export default blog;

@@ -4,19 +4,16 @@ import { BsArrowUpRightCircle } from "react-icons/bs";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const HeadSection = () => {
+const HeadSection = ({heading, description}) => {
   return ( 
     <>
 
       <div data-aos="fade-down" className=" flex items-center justify-center flex-col w-[60%] sm:w-[100%] text-center mx-auto h-screen sm:h-[553px] sm:px-4">
         <h1 >
-          Get custom software & apps that can help you achieve market leader
-          status.
+          {heading}
         </h1>
         <p className="w-[80%] mx-auto my-8">
-          With our developers’ vast abilities, transform your software and app
-          ideas into proﬁtable assets. CRMs, ERPs, utilities, mobile apps,
-          websites - whatever you need, we have you covered.
+          {description}
         </p>
         <motion.div
           whileHover={{ scale: [null, 1, 1.1] }}

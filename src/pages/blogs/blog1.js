@@ -78,7 +78,7 @@ const blog1 = () => {
         urlColors={"text-black"}
         getStartedClr={"text-[#CDAC00]"}
       />
-      <div className="flex my-6 sm:flex-col">
+      <div className="flex my-6 mt-[90px] sm:flex-col">
         <MainBlog post={post} />
         <Sidebar  />
       </div>

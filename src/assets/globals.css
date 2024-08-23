@@ -30,7 +30,7 @@ body {
   font-size: 16px;
   color: #ffffff;
   background-color: 020103;
-  overflow-x: hidden.heading-6
+  overflow-x: hidden
 }
 
 
@@ -107,10 +107,6 @@ strong {
   background-image: "../../public/assets/images/home/background_shades.png";
 }
 
-@media only screen and (max-width: 600px) {
-  .svgResponsiveness {
-  }
-}
 
 @media (max-width: 1630px) {
   /* Tablet */
@@ -446,11 +442,18 @@ strong {
 @layer utilities {
   .custom-inset-shadow {
     @apply shadow-inner;
-    box-shadow: 20px 20px 20px rgba(0, 0, 0, 1) inset, -10px -10px -10px white inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   }
 }
+.custom-inset-shadow:hover{
 
+  box-shadow: #09506f75 0px 19px 22px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
 .custom-inset{
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.categorylisting {
+  box-shadow: rgba(145, 145, 156, 0.25) 0px 50px 100px -20px, #CDAC00 0px 10px 60px -30px, rgba(12, 104, 197, 0.35) 0px -2px 6px 0px inset;
 }
       

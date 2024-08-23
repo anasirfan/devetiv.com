@@ -25,6 +25,12 @@ import Navbar from "@/components/Navbar";
 import Head from "next/head";
 import aboutbg from "../../../public/assets/images/home/background1.png";
 import choosebg from "../../../public/assets/images/home/background2.png";
+
+const heading =
+  "Get custom software & apps that can help you achieve market leader status.";
+const description =
+  "With our developers’ vast abilities, transform your software and app ideas into proﬁtable assets. CRMs, ERPs, utilities, mobile apps, websites - whatever you need, we have you covered.";
+
 const HomeLayout = () => {
   const [btnHeight, setBtnHeight] = useState(220);
   const revealButtonRef = useRef(null); // Ref for "Reveal More" button
@@ -36,7 +42,6 @@ const HomeLayout = () => {
   };
   useEffect(() => {
     updateSvgStyles();
-   
   }, []);
   return (
     <div>
@@ -64,7 +69,7 @@ const HomeLayout = () => {
         />
         <div className="relative z-20">
           <Navbar bgColor={"none"} urlColors={"text-white"} />
-          <HeadSection />
+          <HeadSection heading={heading} description={description} />
         </div>
       </div>
 
@@ -82,22 +87,43 @@ const HomeLayout = () => {
           <AboutUs revealButtonRef={revealButtonRef} />
           <div className="relative py-12 md:py-0 sm:py-0 ">
             <svg
-              className={`sm:hidden absolute `}
+              className="sm:hidden absolute animate-pulse"
               viewBox="-50 0 1387 735"
               width="100%"
-              // height='auto'
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="none"
               style={{ height: "1024px", marginTop: `-${btnHeight}px` }}
             >
+              <defs>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="10" result="coloredBlur" />
+                  <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
               <path
                 opacity="0.8"
                 d="M57.502 732H48.502C23.0969 732 2.50195 711.405 2.50195 686V315C2.50195 289.595 23.0969 269 48.502 269H1238C1263.41 269 1284 248.405 1284 223V49C1284 23.5949 1263.41 3 1238 3H1221.5"
                 stroke="#1A83AC"
                 strokeWidth="5"
-              />
+                filter="url(#glow)"
+                stroke-dasharray="3500"
+                stroke-dashoffset="3500"
+              >
+                <animate
+                  attributeName="stroke-dashoffset"
+                  from="1000"
+                  to="0"
+                  dur="12s"
+                  repeatCount="indefinite"
+                />
+              </path>
             </svg>
+
             <Services serviceDivRef={serviceDivRef} />
           </div>
         </div>
@@ -114,7 +140,7 @@ const HomeLayout = () => {
         </div>
         <div className="relative z-10">
           <svg
-            className="px-20 -mt-[50px] sm:hidden  absolute lineadjustchoose"
+            className="px-20 -mt-[50px] sm:hidden  absolute lineadjustchoose animate-pulse"
             width="100%"
             // height="auto"
             viewBox="0 0 1287 524"
@@ -123,16 +149,36 @@ const HomeLayout = () => {
             preserveAspectRatio="none"
             style={{ height: "724px" }}
           >
+            <defs>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="10" result="coloredBlur" />
+                  <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
             <path
               opacity="0.8"
               d="M1232 521.5H1238C1263.41 521.5 1284 500.905 1284 475.5V355C1284 329.595 1263.41 309 1238 309H49C23.5949 309 3 288.405 3 263V108C3 82.5949 23.5949 62 49 62H894C919.405 62 940 41.4051 940 16V0"
               stroke="#1A83AC"
+      
               strokeWidth="5"
+              filter="url(#glow)"
+              stroke-dasharray="0"
+              stroke-dashoffset="0"
+            />
+            <animate
+              attributeName="stroke-dashoffset"
+              from="1000"
+              to="0"
+              dur="12s"
+              repeatCount="indefinite"
             />
           </svg>
           <div
             data-aos="fade-in"
-            className="relative pb-[350px] sm:pb-4 md:pb-14"
+            className="relative pb-[350px] sm:pb-4 md:pb-14" 
           >
             <Image
               className="w-full py-20 absolute z-10"
@@ -251,7 +297,7 @@ const HomeLayout = () => {
       </div>
 
       <div className="relative bg-cover pt-20 sm:pt-0">
-      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0">
           <Image
             src={choosebg}
             alt="choosebg"
@@ -261,10 +307,10 @@ const HomeLayout = () => {
           />
         </div>
         <div className="relative z-10">
-        <FooterBanner />
-        <Footer textColor={"!text-white"} gradient={"gradient-color"} />
-        <ScrollToTop />
-      </div>
+          <FooterBanner />
+          <Footer textColor={"!text-white"} gradient={"gradient-color"} />
+          <ScrollToTop />
+        </div>
       </div>
     </div>
   );

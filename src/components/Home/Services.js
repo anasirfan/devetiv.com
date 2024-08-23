@@ -18,46 +18,7 @@ const  Services = () => {
 
  
 
-  // useEffect(() => {
-  //   // Intersection Observer to detect if SVG is in viewport
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       setIsInViewport(entry.isIntersecting);
-  //     },
-  //     {
-  //       threshold: 0.1, // Trigger when 10% of the SVG is visible
-  //     }
-  //   );
-
-  //   if (svgRef.current) {
-  //     observer.observe(svgRef.current);
-  //   }
-
-  //   return () => {
-  //     if (svgRef.current) {
-  //       observer.unobserve(svgRef.current);
-  //     }
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   if (isInViewport) {
-  //     // Reset the SVG path state before animating
-  //     anime.set(".svg-draw path", {
-  //       strokeDashoffset: anime.setDashoffset,
-  //     });
-
-  //     anime({
-  //       targets: ".svg-draw path",
-  //       strokeDashoffset: [anime.setDashoffset, 0],
-  //       easing: "easeInOutSine",
-  //       duration: 2500,
-  //       delay: 500,
-  //       direction: "alternative", // Ensure animation plays forward
-  //       loop: true, // Ensure animation does not loop or reverse
-  //     });
-  //   }
-  // }, [isInViewport]);
+ 
   const services = [
     {
       id: 1,
@@ -65,6 +26,7 @@ const  Services = () => {
       desc: "Satisfy all your software development needs with our expert teams’ help.",
       icon: worldIcon,
       img: softdevImage,
+      href: '/software-development',
       className: "bg-[#04445F] col-span-4 sm:col-span-1 ",
     },
     {
@@ -73,6 +35,7 @@ const  Services = () => {
       desc: "Get reliable app development for your products as well as your clients’.",
       icon: appIcon,
       img: appDevImage,
+      href: '/app-development',
       className: "basis-1/3 shadow-sm shadow-[#04445F] col-span-3 sm:col-span-1 sm:bg-[#04445F]",
     },
     {
@@ -81,6 +44,7 @@ const  Services = () => {
       desc: "Want something else? Maybe BI support, a website, or even DevOps help?",
       icon: BiIcon,
       img: BiImage,
+      href: '/contact-us',
       className: "basis-4/7 shadow-sm shadow-[#04445F]  col-span-3 sm:col-span-1 sm:bg-[#04445F] ",
     },
     {
@@ -89,6 +53,7 @@ const  Services = () => {
       desc: "From healthcare and ﬁntech to education and SaaS, we are ready to help a range of industries.",
       icon: IndustriesIcon,
       img: IndustriesImage,
+      href: '/target-industries',
       className: "bg-[#04445F]  basis-2/3 col-span-4 sm:col-span-1",
     },
   ];
@@ -107,7 +72,7 @@ const  Services = () => {
               development, and related needs.
             </p>
           </div>
-          <div className="flex items-center sm:justify-center">
+          {/* <div className="flex items-center sm:justify-center">
             <motion.div
               whileHover={{ scale: [null, 1, 1.1] }}
               transition={{ duration: 0.3 }}
@@ -118,7 +83,7 @@ const  Services = () => {
               </button>
             </motion.div>
 
-          </div>
+          </div> */}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-7 lg:grid-cols-7  gap-8 sm:gap-6 w-[84.5%]  mx-auto -mt-[80px] lg:-mt-[70px]"
         >
@@ -142,8 +107,8 @@ const  Services = () => {
                 <p data-aos="zoom-in-up" className="text-white xl:mb-4 xl:text-[14px] 2xl:mb-4 2xl:text-[14px] lg:text-[12px] lg:w-[90%] custom-md:w-[90%] custom-md:text-[12px] custom-sm:w-[95%] custom-sm:text-[11px]">
                   {service.desc}
                 </p>
-                <Link data-aos="zoom-out" href={"#"}>
-                  <div className="flex flex-row">
+                <Link data-aos="zoom-out" href={service.href}>
+                  <div className="flex flex-row hover:text-[#CDAC00]">
                     <p className="underline">Learn More </p>
                     <span>
                       <MdOutlineArrowOutward className="h-4 w-4 mt-[3px] mx-2" />
