@@ -50,7 +50,10 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Devetiv</title>
-        <meta name="description" content="Devetiv software solutions....." />
+        <link rel="icon" href="/logo.png" sizes="32x32" />
+        <meta name="title" content="Devetiv Software Solutions | Innovative Technology & Consulting Services" />
+        <meta name="description" content="Devetiv Software Solutions offers cutting-edge technology and consulting services to drive business growth. Specializing in custom software development, web and mobile applications, and IT consulting, we provide innovative solutions tailored to your needs. Explore our comprehensive range of services and discover how we can help your business thrive in the digital age." />
+
       </Head>
       <div className={poppins.className}>
 
